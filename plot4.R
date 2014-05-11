@@ -18,8 +18,9 @@ Sys.setlocale(locale="C")
 # Creating the plot on the png graphical device
 png("plot4.png", width = 480, height = 480)
 
-par(mfrow = c(2,2), mar = c(4,4,2,2))                               # 4 diagrams in 2 rows, and 2 columns with proper 
-                                                                    # margin sizes
+par(mfrow = c(2,2), mar = c(4,4,3,1),                               # 4 diagrams in 2 rows, and 2 columns with proper
+    bg = "transparent")                                             # margin sizes and transparent background color
+                                                                    
 with(dfFiltered, {
   plot(Global_active_power ~ DateTime, xlab = "", 
        ylab = "Global Active Power", type = "n")                    
@@ -37,7 +38,7 @@ with(dfFiltered, {
   lines(DateTime, Sub_metering_3, col = "blue")
   legend("topright", cex = 0.95, lty=1, col = c("black", "red", "blue"), 
          legend=c("Sub_metering_1", "Sub_metering_2", 
-                  "Sub_metering_3"))})                              # Bottomleft
+                  "Sub_metering_3"), bty = "n")})                   # Bottomleft
 
 with(dfFiltered, {
   plot(Global_reactive_power ~ DateTime, xlab = "datetime", type = "n")

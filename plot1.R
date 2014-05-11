@@ -17,6 +17,9 @@ Sys.setlocale(locale="C")
 
 # Creating the plot on the png graphical device
 png("plot1.png", width = 480, height = 480)
+
+par(bg = "transparent")                                             # Setting transparent background color
+
 with(dfFiltered, hist(Global_active_power, main = "Global Active Power", col = "red",
                       xlab = "Global Active Power (kilowatts)"))
 dev.off()

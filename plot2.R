@@ -17,6 +17,9 @@ Sys.setlocale(locale="C")
 
 # Creating the plot on the png graphical device
 png("plot2.png", width = 480, height = 480)
+
+par(bg = "transparent")                                             # Setting transparent background color
+
 with(dfFiltered, {
   plot(Global_active_power ~ DateTime, xlab = "", ylab = "Global Active Power (kilowatts)", type = "n")
   lines(DateTime, Global_active_power)})

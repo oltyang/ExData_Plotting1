@@ -17,6 +17,9 @@ Sys.setlocale(locale="C")
 
 # Creating the plot on the png graphical device
 png("plot3.png", width = 480, height = 480)
+
+par(bg = "transparent")                                             # Setting transparent background color
+
 with(dfFiltered, {
   plot(Sub_metering_1 + Sub_metering_2 + Sub_metering_3 ~ DateTime, xlab = "", ylab = "Energy sub metering", type = "n")
   lines(DateTime, Sub_metering_1)
